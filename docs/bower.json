@@ -1,0 +1,14 @@
+{
+  "name": "polish-that-apple",
+  "description": "Polish that apple!",
+  "main": "index.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "iron-image": "PolymerElements/iron-image#^2.1.2",
+    "paper-button": "^2.0.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
+}

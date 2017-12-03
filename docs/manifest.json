@@ -1,0 +1,48 @@
+{
+  "name": "Polish That Apple!",
+  "short_name": "Polish Apple",
+  "description": "Polish an apple to your hearth's content",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#b5e61d",
+  "theme_color": "#b5e61d",
+  "lang": "en-US",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "images/apple.svg",
+      "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icons/apple48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/apple512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
