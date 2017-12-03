@@ -1,0 +1,66 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/mixins/gesture-event-listeners.html">
+
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="pta-apple">
+    <template>
+        <style>
+            :host {
+                display: block;
+                text-align: center;
+            }
+
+            iron-image {
+                margin: 0.8rem;
+                height: calc(90% - 0.8rem);
+                width: calc(90% - 0.8rem);
+            }
+        </style>
+
+        <iron-image id="image" src="/images/apple.svg" sizing="contain" on-track="_handleTrackApple"></iron-image>
+    </template>
+
+    <script>
+        /**
+         * @customElement
+         * @polymer
+         */
+        class PtaApple extends Polymer.GestureEventListeners(Polymer.Element) {
+            constructor() {
+                super();
+
+                this.previousDdx = 0;
+                this.previousDdy = 0;
+            }
+
+            static get is() {
+                return 'pta-apple';
+            }
+
+            _handleTrackApple(e) {
+                let wasSwipingLeft = this.previousDdx < 0;
+                let wasSwipingUp = this.previousDdy < 0;
+
+                let isSwipingLeft = e.detail.ddx < 0;
+                let isSwipingUp = e.detail.ddy < 0;
+
+                let newRub = wasSwipingLeft !== isSwipingLeft || wasSwipingUp !== isSwipingUp;
+
+                this.previousDdx = e.detail.ddx;
+                this.previousDdy = e.detail.ddy;
+
+                if (newRub) {
+                    this.dispatchEvent(new CustomEvent("pta-apple-rubbed", {
+                        detail: {
+                            x: e.detail.x,
+                            y: e.detail.y
+                        }
+                    }));
+                }
+            }
+        }
+
+        window.customElements.define(PtaApple.is, PtaApple);
+    </script>
+</dom-module>

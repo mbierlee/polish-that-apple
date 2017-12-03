@@ -1,0 +1,181 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">
+
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<link rel="import" href="../pta-apple/pta-apple.html">
+<link rel="import" href="../pta-rub/pta-rub.html">
+
+<dom-module id="polish-that-apple-app">
+    <template>
+        <style>
+            :host {
+                display: block;
+                height: 100%;
+                width: 100%;
+
+                background-color: white;
+                background-image: linear-gradient(90deg, rgba(181, 230, 29, 0.1) 50%, transparent 50%), linear-gradient(rgba(181, 230, 29, 0.1) 50%, transparent 50%);
+                background-size: 50px 50px;
+            }
+
+            pta-apple {
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+            }
+
+            #polishThatText {
+                margin: 0 0.8rem 0 0.8rem;
+                position: absolute;
+                top: 2rem;
+                width: calc(100% - 1.6rem);
+                height: 30%;
+                color: #515151;
+            }
+
+            #appleText {
+                margin: 0 0.8rem 0 0.8rem;
+                position: absolute;
+                top: 35vh;
+                width: calc(100% - 1.6rem);
+                height: 15%;
+            }
+
+            #buttonBar {
+                position: absolute;
+                margin: 0;
+                top: 60vh;
+                width: 100%;
+                text-align: center;
+            }
+
+            paper-button {
+                width: 200px;
+                margin: 0;
+                background-color: #d00300;
+                color: #FFFFFF;
+            }
+
+            #startText {
+                height: 20px;
+                width: 100px;
+            }
+
+            @keyframes fadeMenu {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+
+            .animateFadeMenu {
+                animation-name: fadeMenu;
+                animation-duration: 500ms;
+                animation-fill-mode: forwards;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            @keyframes showApple {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                    color: blue;
+                }
+            }
+
+            .animateShowApple {
+                animation-name: showApple;
+                animation-duration: 500ms;
+                animation-fill-mode: forwards;
+            }
+
+            pta-rub {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+
+        <pta-apple id="apple"
+                   on-pta-apple-rubbed="_handleRub"></pta-apple>
+
+        <iron-image id="polishThatText"
+                    class="main-menu-ui"
+                    src="/images/polishThatText.svg"
+                    sizing="contain"></iron-image>
+        <iron-image id="appleText"
+                    class="main-menu-ui"
+                    src="/images/appleText.svg"
+                    sizing="contain"></iron-image>
+
+        <div id="buttonBar" class="main-menu-ui">
+            <paper-button raised on-click="_startPolishing">
+                <iron-image id="startText"
+                            src="/images/startText.svg"
+                            sizing="contain"></iron-image>
+            </paper-button>
+        </div>
+    </template>
+
+    <script>
+        /**
+         * @customElement
+         * @polymer
+         */
+        class PolishThatAppleApp extends Polymer.Element {
+            constructor() {
+                super();
+            }
+
+            static get is() {
+                return 'polish-that-apple-app';
+            }
+
+            static get properties() {
+                return {
+                    started: {
+                        type: Boolean,
+                        value: false,
+                        reflectToAttribute: true
+                    }
+                };
+            }
+
+            _startPolishing() {
+                this.set("started", true);
+
+                this.root.querySelectorAll(".main-menu-ui").forEach(e => {
+                    e.classList.add("animateFadeMenu");
+                    setTimeout(() => e.classList.add("hidden"), 500);
+                });
+
+                this.$.apple.classList.add("animateShowApple");
+            }
+
+            _handleRub(e) {
+                let newRubElement = document.createElement("pta-rub");
+
+                let xPos = e.detail.x - 50;
+                let yPos = e.detail.y - 80;
+                newRubElement.setAttribute("style", `position: absolute; width: 100px; height: 80px; left: ${xPos}px; top: ${yPos}px;`);
+
+                document.body.appendChild(newRubElement);
+
+                setTimeout(() => {
+                    document.body.removeChild(newRubElement);
+                }, 600);
+            }
+        }
+
+        window.customElements.define(PolishThatAppleApp.is, PolishThatAppleApp);
+    </script>
+</dom-module>

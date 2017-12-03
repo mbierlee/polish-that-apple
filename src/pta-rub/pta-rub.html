@@ -1,0 +1,53 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="pta-rub">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            iron-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+
+            .animateFade {
+                animation-name: fade;
+                animation-delay: 100ms;
+                animation-duration: 500ms;
+                animation-fill-mode: forwards;
+            }
+        </style>
+
+        <iron-image id="image"
+                    class="animateFade"
+                    src="/images/rubText.svg"
+                    sizing="contain"></iron-image>
+    </template>
+
+    <script>
+        /**
+         * @customElement
+         * @polymer
+         */
+        class PtaRub extends Polymer.Element {
+            static get is() {
+                return 'pta-rub';
+            }
+        }
+
+        window.customElements.define(PtaRub.is, PtaRub);
+    </script>
+</dom-module>

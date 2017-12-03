@@ -1,0 +1,12 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/polish-that-apple-app/polish-that-apple-app.html",
+  "sources": [
+    "src/**/*",
+    "images/**/*",
+    "bower.json"
+  ],
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+  ]
+}
