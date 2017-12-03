@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["index.html","abce23427a603ce943237deb2fba501c"],["src/polish-that-apple-app/polish-that-apple-app.html","c273b80165830db65d3e0d9b1ca2908e"]];
+var precacheConfig = [["index.html","2eccecfde0fe6033e63805fa8dd44493"],["src/polish-that-apple-app/polish-that-apple-app.html","f499231abc1591c6b289347383e0a3c4"]];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
 
