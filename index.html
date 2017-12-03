@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
 
     <title>Polish That Apple!</title>
     <meta name="description" content="Polish that apple!">
@@ -23,6 +23,12 @@
 
     <link rel="import" href="/src/polish-that-apple-app/polish-that-apple-app.html">
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js');
+        }
+    </script>
+
     <style>
         html {
             height: 100%;
@@ -39,5 +45,9 @@
 </head>
 <body>
 <polish-that-apple-app></polish-that-apple-app>
+
+<noscript>
+    This app uses JavaScript, you need to enable that if you wish to polish that apple!
+</noscript>
 </body>
 </html>
