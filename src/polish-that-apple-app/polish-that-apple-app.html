@@ -150,6 +150,13 @@
                 };
             }
 
+            ready() {
+                super.ready();
+                document.ontouchmove = function(event){
+                    event.preventDefault();
+                }
+            }
+
             _startPolishing() {
                 this.set("started", true);
 
