@@ -6,6 +6,9 @@ Licensed under the terms of the MIT license
 
 Apple image designed by from [Flaticon](https://profile.flaticon.com/license/free)
 
+## Try it
+See it in action [here](https://mbierlee.github.io/polish-that-apple/)
+
 ## Build with Polymer
 This progressive web app is build with Polymer. The easiest way to run the application is to use Polymer Serve.
 
