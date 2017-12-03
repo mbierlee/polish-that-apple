@@ -2,7 +2,7 @@
   "name": "Polish That Apple!",
   "short_name": "Polish Apple",
   "description": "Polish an apple to your hearth's content",
-  "start_url": "/polish-that-apple",
+  "start_url": "./polish-that-apple",
   "display": "standalone",
   "background_color": "#b5e61d",
   "theme_color": "#b5e61d",
