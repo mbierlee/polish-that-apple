@@ -16,5 +16,5 @@ First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polyme
 Install the application's bower dependencies using `bower install`, then run `polymer serve` to serve the application locally.
 
 # Additional Resources
-[MDN on Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+[MDN on Web App Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)  
 [Google Developers on Progressive Web Apps](https://developers.google.com/web/progressive-web-apps/)
