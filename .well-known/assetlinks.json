@@ -1,5 +1,0 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target" : { "namespace": "android_app", "package_name": "io.github.mbierlee.twa",
-                   "sha256_cert_fingerprints": ["9A:38:0A:D2:12:24:9C:22:D2:E0:9E:1D:4A:21:08:4B:63:85:AC:DE:44:5B:B7:D1:19:77:AF:30:52:F8:45:D1"] }
-    }]
