@@ -1,7 +1,7 @@
 # Polish That Apple!
 An example of a progressive web app. You can polish an apple to your hearth's content!
 
-Copyright 2017 Mike Bierlee  
+Copyright 2017-2021 Mike Bierlee  
 Licensed under the terms of the MIT license  
 
 Apple image designed by [Flaticon](https://profile.flaticon.com/license/free)
