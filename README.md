@@ -4,7 +4,7 @@ An example of a progressive web app. You can polish an apple to your hearth's co
 Copyright 2017 Mike Bierlee  
 Licensed under the terms of the MIT license  
 
-Apple image designed by from [Flaticon](https://profile.flaticon.com/license/free)
+Apple image designed by [Flaticon](https://profile.flaticon.com/license/free)
 
 ## Try it
 See it in action [here](https://mbierlee.github.io/polish-that-apple/)
